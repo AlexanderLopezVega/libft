@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:59:39 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/14 17:11:17 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:27:49 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		if (s1[i] == s2[j])
 		{
 			if (j == 0)
-				substr = &(s1[i]);
+				substr = (char *)&(s1[i]);
 			++j;
 		}
 		else
