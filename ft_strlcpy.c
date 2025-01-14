@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:49:35 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/14 16:52:12 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:24:04 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size) {
 	size_t	srclen;
 	size_t	cpylen;
 	
-	if (size == 0)
-		return ;
 	srclen = ft_strlen(src);
+	if (size == 0)
+		return (srclen);
 	if (srclen >= size)
 		cpylen = size - 1;
 	else
