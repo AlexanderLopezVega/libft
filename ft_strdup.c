@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 00:35:48 by alexander         #+#    #+#             */
-/*   Updated: 2025/01/14 17:15:02 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:21:53 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_strdup(const char *s)
 {
 	size_t	len;
-	size_t	i;
 	char	*str;
 
 	len = ft_strlen(s);
