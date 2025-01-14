@@ -25,6 +25,11 @@ SRCS		=	\
 				$(SRC_DIR)/ft_strchr.c \
 				$(SRC_DIR)/ft_strdup.c \
 				$(SRC_DIR)/ft_strlcat.c \
+				$(SRC_DIR)/ft_strlcpy.c \
+				$(SRC_DIR)/ft_strlen.c \
+				$(SRC_DIR)/ft_strncmp.c \
+				$(SRC_DIR)/ft_strnstr.c \
+				$(SRC_DIR)/ft_strrchr.c \
 				$(SRC_DIR)/ft_tolower.c \
 				$(SRC_DIR)/ft_toupper.c \
 
