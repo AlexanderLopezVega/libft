@@ -6,7 +6,7 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 17:02:21 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/14 17:12:53 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/14 17:28:11 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strrchr(const char *s, int c)
 	char	*iter;
 
 	last_c = NULL;
-	iter = s;
+	iter = (char *)s;
 	while (*iter != '\0')
 	{
 		if (*iter == c)
-			last_c = iter;
+			last_c = (char *)iter;
 		++iter;
 	}
 	return (last_c);
