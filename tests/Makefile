@@ -32,9 +32,13 @@ SRCS		=	\
 				$(SRC_DIR)/test_ft_strrchr.c \
 				$(SRC_DIR)/test_ft_tolower.c \
 				$(SRC_DIR)/test_ft_toupper.c \
+				$(SRC_DIR)/test.c \
 
 # Set object files
 OBJS		=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+
+# Set library files
+LIB			=	../libft.a
 
 # Set targets
 NAME		=	test
@@ -42,7 +46,7 @@ NAME		=	test
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HDR_DIR)
 	mkdir -p $(OBJ_DIR)
