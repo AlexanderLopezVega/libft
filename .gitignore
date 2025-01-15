@@ -1,4 +1,8 @@
 *
+!tests
+!tests/test_ft_*.c
+!tests/test.c
+!tests/test.h
 !.gitignore
 !ft_atoi.c
 !ft_bzero.c
