@@ -6,12 +6,13 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:20:52 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/15 12:31:54 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:41:33 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEST_H
 # define TEST_H
+# include <stdio.h>
 # include "../libft.h"
 
 void	test_ft_atoi(void);
