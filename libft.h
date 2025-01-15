@@ -6,13 +6,14 @@
 /*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:06:00 by alexander         #+#    #+#             */
-/*   Updated: 2025/01/14 17:02:34 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:37:06 by vboxuser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdlib.h>
+# include <sys/types.h>
+#include <stddef.h>
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
