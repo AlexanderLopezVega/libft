@@ -6,13 +6,13 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:50:12 by alopez-v          #+#    #+#             */
-/*   Updated: 2025/01/16 15:51:34 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/16 15:55:23 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return (c >= '\0' && c <= '~');
 }
