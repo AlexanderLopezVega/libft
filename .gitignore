@@ -1,5 +1,6 @@
 *
 !tests
+!tests/perform_test.c
 !tests/test_ft_*.c
 !tests/test.c
 !tests/test.h
