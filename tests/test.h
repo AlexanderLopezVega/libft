@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:20:52 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/15 12:41:33 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/16 15:31:12 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include "../libft.h"
 
+void	perform_test(const char *test_name, const void *a, const void *b, int (*cmp_fun)(const void *a, const void *b));
 void	test_ft_atoi(void);
 void	test_ft_bzero(void);
 void	test_ft_calloc(void);
