@@ -10,6 +10,7 @@ HDR_DIR		=	$(BSE_DIR)
 
 # Set source files
 SRCS		=	\
+				$(SRC_DIR)/perform_test.c \
 				$(SRC_DIR)/test_ft_atoi.c \
 				$(SRC_DIR)/test_ft_bzero.c \
 				$(SRC_DIR)/test_ft_calloc.c \
