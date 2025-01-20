@@ -6,7 +6,7 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 17:02:21 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/20 10:05:38 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/20 13:23:22 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last_c;
-	char	*iter;
+	size_t	i;
 
-	last_c = NULL;
-	iter = (char *)s;
-	while (*iter != '\0')
+	if (!s)
+		return (NULL);
+	i = ft_strlen(s) + 1;
+	while (i > 0)
 	{
-		if (*iter == c)
-			last_c = (char *)iter;
-		++iter;
+		if (s[i] == c)
+			return ((char *)(s + i));
+		--i;
 	}
-	return (last_c);
+	if (s[i] == c)
+		return ((char *)(s + i));
+	return (NULL);
 }
