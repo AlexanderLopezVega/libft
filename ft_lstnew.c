@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strlcpy.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:38:00 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/15 12:31:15 by vboxuser         ###   ########.fr       */
+/*   Created: 2025/01/17 11:01:55 by alopez-v          #+#    #+#             */
+/*   Updated: 2025/01/20 10:07:24 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	test_ft_strlcpy(void)
+t_list	*ft_lstnew(void *content)
 {
-	return ;
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

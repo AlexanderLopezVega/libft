@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_isalpha.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:39:32 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/15 12:31:36 by vboxuser         ###   ########.fr       */
+/*   Created: 2025/01/17 11:19:05 by alopez-v          #+#    #+#             */
+/*   Updated: 2025/01/20 10:08:10 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libft.h"
 
-void	test_ft_isalpha(void)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	return ;
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }

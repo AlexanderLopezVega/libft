@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strchr.c                                   :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:37:43 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/15 12:30:10 by vboxuser         ###   ########.fr       */
+/*   Created: 2025/01/17 11:17:52 by alopez-v          #+#    #+#             */
+/*   Updated: 2025/01/20 10:07:57 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	test_ft_strchr(void)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	return ;
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

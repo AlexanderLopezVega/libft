@@ -4,13 +4,13 @@ CFLAGS		=	-Wall -Werror -Wextra
 
 # Set directories
 BSE_DIR		=	.
-SRC_DIR		=	$(BSE_DIR)
-OBJ_DIR		=	$(BSE_DIR)
-HDR_DIR		=	$(BSE_DIR)
+SRC_DIR		=	$(BSE_DIR)/src
+OBJ_DIR		=	$(BSE_DIR)/obj
+HDR_DIR		=	$(BSE_DIR)/includes
+LIB_DIR		=	$(BSE_DIR)/lib
 
 # Set source files
 SRCS		=	\
-				$(SRC_DIR)/perform_test.c \
 				$(SRC_DIR)/test_ft_atoi.c \
 				$(SRC_DIR)/test_ft_bzero.c \
 				$(SRC_DIR)/test_ft_calloc.c \
@@ -39,7 +39,9 @@ SRCS		=	\
 OBJS		=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 # Set library files
-LIB			=	../libft.a
+LIB			=	\
+				$(LIB_DIR)/libft.a \
+				$(LIB_DIR)/testlib.a \
 
 # Set targets
 NAME		=	test
@@ -47,9 +49,9 @@ NAME		=	test
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB) 
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HDR_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $< -I $(HDR_DIR)
 

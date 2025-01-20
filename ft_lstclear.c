@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 16:55:04 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/20 10:05:22 by alopez-v         ###   ########.fr       */
+/*   Created: 2025/01/17 11:12:56 by alopez-v          #+#    #+#             */
+/*   Updated: 2025/01/20 10:08:05 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *s)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	len;
+	t_list	*prev_node;
 
-	len = 0;
-	while (s[len] != '\0')
-		++len;
-	return (len);
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		prev_node = *lst;
+		*lst = prev_node->next;
+		del(prev_node);
+		free(prev_node);
+	}
+	*lst = NULL;
 }

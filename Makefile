@@ -7,6 +7,8 @@ BSE_DIR		=	.
 SRC_DIR		=	$(BSE_DIR)
 OBJ_DIR		=	$(BSE_DIR)
 HDR_DIR		=	$(BSE_DIR)
+BNS_SRC_DIR	=	$(BSE_DIR)
+BNS_OBJ_DIR	=	$(BSE_DIR)
 
 # Set source files
 SRCS		=	\
@@ -45,8 +47,19 @@ SRCS		=	\
 				$(SRC_DIR)/ft_tolower.c \
 				$(SRC_DIR)/ft_toupper.c \
 
+BNS_SRCS	=	\
+				$(BNS_SRC_DIR)/ft_lstadd_back.c \
+				$(BNS_SRC_DIR)/ft_lstadd_front.c \
+				$(BNS_SRC_DIR)/ft_lstclear.c \
+				$(BNS_SRC_DIR)/ft_lstdelone.c \
+				$(BNS_SRC_DIR)/ft_lstiter.c \
+				$(BNS_SRC_DIR)/ft_lstlast.c \
+				$(BNS_SRC_DIR)/ft_lstmap.c \
+				$(BNS_SRC_DIR)/ft_lstnew.c \
+
 # Set object files
 OBJS		=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+BNS_OBJS	=	$(patsubst $(BNS_SRC_DIR)/%.c, $(BNS_OBJ_DIR)/%.o, $(BNS_SRCS))
 
 # Set targets
 NAME		=	libft.a
@@ -56,19 +69,32 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
+bonus:	$(BNS_OBJS) $(NAME)
+	ar -rcs $(NAME) $(OBJS) $(BNS_OBJS)
+
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HDR_DIR)
 	mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -o $@ -c $< -I $(HDR_DIR)
+
+$(BNS_OBJ_DIR)/%.o: $(BNS_SRC_DIR)/%.c $(HDR_DIR)
+	mkdir -p $(BNS_OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $< -I $(HDR_DIR)
 
 clean:
 ifneq ($(OBJ_DIR), $(BSE_DIR))
 	rm -r $(OBJ_DIR)
-endif
+else
 	rm -f $(OBJS)
+endif
+ifneq ($(BNS_OBJ_DIR), $(BSE_DIR))
+	rm -r $(BNS_OBJ_DIR)
+else
+	rm -f $(BNS_OBJS)
+endif
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus

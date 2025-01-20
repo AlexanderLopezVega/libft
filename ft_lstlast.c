@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_strncmp.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:38:07 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/15 12:31:21 by vboxuser         ###   ########.fr       */
+/*   Created: 2025/01/17 11:19:53 by alopez-v          #+#    #+#             */
+/*   Updated: 2025/01/20 10:07:44 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libft.h"
 
-void	test_ft_strncmp(void)
+t_list	*ft_lstlast(t_list *lst)
 {
-	return ;
+	while (lst)
+		lst = lst->next;
+	return (lst);
 }
