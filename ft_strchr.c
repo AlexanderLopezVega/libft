@@ -6,7 +6,7 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 00:34:19 by alexander         #+#    #+#             */
-/*   Updated: 2025/01/21 12:57:54 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:56:52 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strchr(const char *s, int c)
 	found_char = 0;
 	while (*iter != '\0')
 	{
-		if (*((unsigned char *)iter) == c)
+		if (*((unsigned char *)iter) == (unsigned char)c)
 			return (iter);
 		++iter;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return (iter);
 	return (NULL);
 }
