@@ -6,7 +6,7 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 11:12:56 by alopez-v          #+#    #+#             */
-/*   Updated: 2025/01/21 11:16:32 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:45:37 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*prev_node;
+	t_list	*iter;
 
-	if (!lst || !*lst || !del)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{
-		prev_node = *lst;
-		*lst = prev_node->next;
-		del(prev_node->content);
-		free(prev_node);
+		iter = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = iter;
 	}
 	*lst = NULL;
 }

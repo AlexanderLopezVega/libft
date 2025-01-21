@@ -6,7 +6,7 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:59:39 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/21 12:29:17 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/21 16:18:00 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	i = 0;
 	j = 0;
-	while (i < len && big[i] != '\0')
+	while (big[i + j] != '\0' && i + j < len)
 	{
-		if (big[i] == little[j])
-		{
+		while (i + j < len && big[i + j] == little[j] && little[j] != '\0')
 			++j;
-			if (little[j] == '\0')
-				return ((char *)(big) + i - j + 1);
-		}
+		if (little[j] == '\0')
+			return ((char *)&big[i]);
 		else
+		{
+			i += j;
 			j = 0;
+		}
 		++i;
 	}
 	return (NULL);

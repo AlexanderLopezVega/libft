@@ -6,7 +6,7 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 09:30:09 by alopez-v          #+#    #+#             */
-/*   Updated: 2025/01/21 12:47:01 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:06:05 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,26 @@
 
 static int	contains_char(const char *str, const char c)
 {
-	unsigned int	i;
+	char	*iter;
 
-	i = 0;
-	while (str[i] != '\0' && str[i] != c)
-		++i;
-	return (str[i] == c);
+	iter = (char *)str;
+	while (*iter != '\0' && *iter != c)
+		++iter;
+	return (*iter == c);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	start;
-	unsigned int	end;
+	char	*start;
+	char	*end;
 
-	if (!s1)
-		return (NULL);
-	start = 0;
-	end = ft_strlen(s1) + 1;
-	if (end - 1 == start)
-		return ((char *)s1);
-	while (s1[start] != '\0' && contains_char(set, s1[start]))
+	start = (char *)s1;
+	end = start;
+	while (*end != '\0')
+		++end;
+	while (*start != '\0' && contains_char(set, *start))
 		++start;
-	while (end > start && contains_char(set, s1[end - 1]))
+	while (end != start && contains_char(set, *end))
 		--end;
-	return (ft_substr(s1, start, end - start));
+	return (ft_substr(start, 0, end - start + 1));
 }
