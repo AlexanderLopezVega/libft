@@ -6,46 +6,64 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:55:48 by alopez-v          #+#    #+#             */
-/*   Updated: 2025/01/20 10:06:41 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:46:12 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static unsigned int	count_digits(int n)
+static size_t	count_chars(int n)
 {
-	unsigned int	num_digits;
+	size_t	num_chars;
 
-	num_digits = 0;
+	if (n == 0)
+		return (1);
+	num_chars = 0;
+	if (n < 0)
+		++num_chars;
 	while (n != 0)
 	{
 		n /= 10;
-		++num_digits;
+		++num_chars;
 	}
-	++num_digits;
-	return (num_digits);
+	return (num_chars);
 }
 
-static void	int_to_str_rec(int n, char *str, unsigned int num_digits,
-		unsigned int digit)
+static void	fill_digits_rec(char *str, int n, int *digit)
 {
-	if (n == 0)
-		str[num_digits] = '\0';
+	if (n > -10 && n < 10)
+	{
+		if (n < 0)
+			str[*digit] = '0' + -n;
+		else
+			str[*digit] = '0' + n;
+		++(*digit);
+	}
 	else
 	{
-		int_to_str_rec(n / 10, str, num_digits, digit + 1);
-		str[num_digits - digit] = n % 10;
+		fill_digits_rec(str, n / 10, digit);
+		fill_digits_rec(str, n % 10, digit);
 	}
 }
 
 char	*ft_itoa(int n)
 {
+	size_t	num_chars;
 	char	*str;
+	int		digit;
 
-	str = malloc(sizeof(char) * (count_digits(n) + 1));
+	num_chars = count_chars(n);
+	str = malloc(sizeof(char) * (num_chars + 1));
 	if (!str)
 		return (NULL);
-	int_to_str_rec(n, str, count_digits(n), 0);
+	digit = 0;
+	if (n < 0)
+	{
+		str[0] = '-';
+		digit = 1;
+	}
+	fill_digits_rec(str, n, &digit);
+	str[num_chars] = '\0';
 	return (str);
 }
