@@ -6,7 +6,7 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:06:00 by alexander         #+#    #+#             */
-/*   Updated: 2025/01/20 13:27:03 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:25:45 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 t_list				*ft_lstnew(void *content);
+int					ft_lstsize(t_list *lst);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexander <alexander@student.42.fr>        +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 00:08:41 by alexander         #+#    #+#             */
-/*   Updated: 2024/12/04 00:52:24 by alexander        ###   ########.fr       */
+/*   Updated: 2025/01/21 12:27:42 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
 	while (i < n)
 	{

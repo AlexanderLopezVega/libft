@@ -6,7 +6,7 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:56:34 by vboxuser          #+#    #+#             */
-/*   Updated: 2025/01/20 14:56:36 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:24:19 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	if (!s1 || !s2 || n == 0)
+	if (n == 0)
 		return (0);
 	i = 0;
 	while (i < n && s1[i] != 0 && s2[i] != 0 && ((unsigned char *)s1)[i]

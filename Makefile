@@ -56,6 +56,7 @@ BNS_SRCS	=	\
 				$(BNS_SRC_DIR)/ft_lstlast.c \
 				$(BNS_SRC_DIR)/ft_lstmap.c \
 				$(BNS_SRC_DIR)/ft_lstnew.c \
+				$(BNS_SRC_DIR)/ft_lstsize.c \
 
 # Set object files
 OBJS		=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))

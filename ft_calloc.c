@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboxuser <vboxuser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:55:51 by alexander         #+#    #+#             */
-/*   Updated: 2025/01/15 12:36:15 by vboxuser         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:30:11 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 
 	num_bytes = nmemb * size;
-	if (num_bytes == 0 || nmemb * size != num_bytes)
-		return (NULL);
 	ptr = malloc(num_bytes);
-	if (ptr == NULL)
+	if (!ptr)
 		return (NULL);
 	i = 0;
 	while (i < num_bytes)
 	{
-		((char *)(ptr))[i] = '\0';
+		((unsigned char *)(ptr))[i] = '\0';
 		++i;
 	}
 	return (ptr);
