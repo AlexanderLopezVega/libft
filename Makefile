@@ -48,15 +48,15 @@ SRCS		=	\
 				$(SRC_DIR)/ft_toupper.c \
 
 BNS_SRCS	=	\
-				$(BNS_SRC_DIR)/ft_lstadd_back.c \
-				$(BNS_SRC_DIR)/ft_lstadd_front.c \
-				$(BNS_SRC_DIR)/ft_lstclear.c \
-				$(BNS_SRC_DIR)/ft_lstdelone.c \
-				$(BNS_SRC_DIR)/ft_lstiter.c \
-				$(BNS_SRC_DIR)/ft_lstlast.c \
-				$(BNS_SRC_DIR)/ft_lstmap.c \
-				$(BNS_SRC_DIR)/ft_lstnew.c \
-				$(BNS_SRC_DIR)/ft_lstsize.c \
+				$(BNS_SRC_DIR)/ft_lstadd_back_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstadd_front_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstclear_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstdelone_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstiter_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstlast_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstmap_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstnew_bonus.c \
+				$(BNS_SRC_DIR)/ft_lstsize_bonus.c \
 
 # Set object files
 OBJS		=	$(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
