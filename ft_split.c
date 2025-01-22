@@ -6,14 +6,14 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 16:45:52 by alopez-v          #+#    #+#             */
-/*   Updated: 2025/01/21 14:35:32 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/22 09:59:51 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-size_t	get_split_len(const char *s, const char c)
+static size_t	get_split_len(const char *s, const char c)
 {
 	size_t	num_words;
 	char	in_word;

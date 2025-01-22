@@ -6,12 +6,12 @@
 /*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 11:12:56 by alopez-v          #+#    #+#             */
-/*   Updated: 2025/01/21 16:45:37 by alopez-v         ###   ########.fr       */
+/*   Updated: 2025/01/22 09:59:08 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+//#include <stdlib.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

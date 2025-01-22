@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexander <alexander@student.42.fr>        +#+  +:+       +#+        */
+/*   By: alopez-v <alopez-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 23:41:22 by alexander         #+#    #+#             */
-/*   Updated: 2024/12/09 14:31:08 by alexander        ###   ########.fr       */
+/*   Updated: 2025/01/22 09:56:32 by alopez-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(const char c)
+static int	ft_isspace(const char c)
 {
 	return (c == ' '
 		|| c == '\f'
