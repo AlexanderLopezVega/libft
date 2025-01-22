@@ -73,11 +73,11 @@ $(NAME): $(OBJS)
 bonus:	$(BNS_OBJS) $(NAME)
 	ar -rcs $(NAME) $(OBJS) $(BNS_OBJS)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HDR_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $< -I $(HDR_DIR)
 
-$(BNS_OBJ_DIR)/%.o: $(BNS_SRC_DIR)/%.c $(HDR_DIR)
+$(BNS_OBJ_DIR)/%.o: $(BNS_SRC_DIR)/%.c
 	mkdir -p $(BNS_OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $< -I $(HDR_DIR)
 
